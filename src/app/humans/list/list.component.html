@@ -1,0 +1,14 @@
+<h1>List of humans</h1>
+
+<button (click)="removeHuman()">Remove human</button>
+
+<div>
+  <h3>Removed human</h3>
+  <span>{{removedHuman}}</span>
+</div>
+
+<ul>
+  <li *ngFor="let human of humans; let i = index">
+    {{i + ' - ' + human}}
+  </li>
+</ul>
