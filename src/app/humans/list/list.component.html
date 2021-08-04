@@ -2,10 +2,14 @@
 
 <button (click)="removeHuman()">Remove human</button>
 
-<div *ngIf="removedHuman!==''">
+<div *ngIf="removedHuman!==''; else noRemoved">
   <h3>Removed human</h3>
   <span>{{removedHuman}}</span>
 </div>
+
+<ng-template #noRemoved>
+  <h3>Nothing is removed.</h3>
+</ng-template>
 
 <ul>
   <li *ngFor="let human of humans; let i = index">
