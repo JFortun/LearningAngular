@@ -7,24 +7,10 @@
   </div>
 
   <div class="col">
-    <h3>Add <small>{{new.name}}</small></h3>
-    <hr>
-    <form (ngSubmit)="add()">
-      <input
-        type="text"
-        placeholder="Book"
-        name="name"
-        [(ngModel)]="new.name"
-      >
-      <input
-        type="number"
-        placeholder="Pages"
-        name="pages"
-        [(ngModel)]="new.pages"
-      >
-      <button>
-        Add
-      </button>
-    </form>
+    <app-add
+      [new]="new"
+      (onNewBook)="addNewBook($event)"
+    ></app-add>
+
   </div>
 </div>

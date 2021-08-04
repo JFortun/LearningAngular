@@ -19,15 +19,11 @@ export class MainPageComponent {
   ]
 
   new: Book = {
-    name: '',
-    pages: 0
+    name: 'Book 3',
+    pages: 45
   }
 
-  add() {
-    if (this.new.name.trim().length == 0) {
-      return;
-    }
-    this.books.push(this.new);
-    this.new = {name: '', pages: 0};
+  addNewBook(book: Book) {
+    this.books.push(book);
   }
 }
