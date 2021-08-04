@@ -2,7 +2,7 @@
 
 <button (click)="removeHuman()">Remove human</button>
 
-<div>
+<div *ngIf="removedHuman!==''">
   <h3>Removed human</h3>
   <span>{{removedHuman}}</span>
 </div>
