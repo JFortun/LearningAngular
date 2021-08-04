@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Book} from "../interfaces/library.interfaces";
+import {Component} from '@angular/core';
+import {LibraryService} from "../services/library.service";
 
 @Component({
   selector: 'app-books',
@@ -7,6 +7,10 @@ import {Book} from "../interfaces/library.interfaces";
 })
 export class BooksComponent {
 
-  @Input()
-  books: Book[] = [];
+  get books() {
+    return this.libraryService.books;
+  }
+
+  constructor(private libraryService: LibraryService) {
+  }
 }

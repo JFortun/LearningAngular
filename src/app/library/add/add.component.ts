@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Book} from "../interfaces/library.interfaces";
+import {LibraryService} from "../services/library.service";
 
 @Component({
   selector: 'app-add',
@@ -13,15 +14,15 @@ export class AddComponent {
     pages: 0
   }
 
-  @Output()
-  onNewBook: EventEmitter<Book> = new EventEmitter();
+  constructor(private libraryService: LibraryService) {
+  }
 
   add() {
     if (this.new.name.trim().length == 0) {
       return;
     }
 
-    this.onNewBook.emit(this.new);
+    this.libraryService.addBook(this.new);
 
     this.new = {name: '', pages: 0};
   }
