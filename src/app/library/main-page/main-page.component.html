@@ -3,9 +3,23 @@
 
 <div class="row">
   <div class="col">
+    <h3>Books</h3>
+    <hr>
     <ul>
       <li>Book 1</li>
       <li>Book 2</li>
     </ul>
+  </div>
+
+  <div class="col">
+    <h3>Add</h3>
+    <hr>
+    <form (ngSubmit)="add()">
+      <input type="text" placeholder="Book">
+      <input type="number" placeholder="Pages">
+      <button>
+        Add
+      </button>
+    </form>
   </div>
 </div>
