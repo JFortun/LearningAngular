@@ -1,9 +1,5 @@
 import {Component} from '@angular/core';
-
-interface Book {
-  name: string;
-  pages: number;
-}
+import {Book} from "../interfaces/library.interfaces";
 
 @Component({
   selector: 'app-main-page',
