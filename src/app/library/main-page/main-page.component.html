@@ -6,17 +6,26 @@
     <h3>Books</h3>
     <hr>
     <ul>
-      <li>Book 1</li>
-      <li>Book 2</li>
+      <li *ngFor="let book of books">{{book.name}} - {{book.pages | number}}</li>
     </ul>
   </div>
 
   <div class="col">
-    <h3>Add</h3>
+    <h3>Add <small>{{new.name}}</small></h3>
     <hr>
     <form (ngSubmit)="add()">
-      <input type="text" placeholder="Book">
-      <input type="number" placeholder="Pages">
+      <input
+        type="text"
+        placeholder="Book"
+        name="name"
+        [(ngModel)]="new.name"
+      >
+      <input
+        type="number"
+        placeholder="Pages"
+        name="pages"
+        [(ngModel)]="new.pages"
+      >
       <button>
         Add
       </button>
